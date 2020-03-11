@@ -1,21 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { AppBar } from '../../atoms/AppBar'
+import { Content } from './Content'
 
-export function Board (props) {
+export function Board () {
   return (
     <>
-    <header>
-      <AppBar />
-    </header>
-    <main>
-      <h1>Board page</h1>
+    <AppBar />
+    <main style={{ flex: 1 }}>
+      <Content />
     </main>
     </>
   )
-}
-
-Board.propTypes = {
-
 }
