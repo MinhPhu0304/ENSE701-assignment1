@@ -1,11 +1,20 @@
-import { AppBar as MUIAppBar, IconButton, Typography, Button, makeStyles } from '@material-ui/core'
-import React from 'react'
+import { AppBar as MUIAppBar, IconButton, Typography, Button, 
+  makeStyles, DialogContentText,
+  Link as MUILink,
+  Dialog, 
+  DialogContent, DialogTitle } from '@material-ui/core'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export function AppBar () {
   const styles = useStyles()
+  const [openModal, setOpenModal] = useState(false)
 
+  const handleModalState = () => {
+    setOpenModal(!openModal)
+  }
   return (
+    <>
     <MUIAppBar className={styles.container} position="relative">
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
         <Link to="/">
@@ -18,9 +27,23 @@ export function AppBar () {
         </Link>
       </div>
       <div>
-        <Button size="medium" variant="outlined" color="secondary">Say to the team</Button>
+        <Button size="medium" variant="outlined" color="secondary" onClick={handleModalState}>Say to the team</Button>
       </div>
     </MUIAppBar>
+
+    <Dialog open={openModal} onClose={handleModalState}>
+      <DialogTitle>Porfolio project built with ❤️</DialogTitle>
+      <DialogContent>
+        <DialogContentText>Sites built by:</DialogContentText>
+        <DialogContentText>
+          <MUILink  style={{ color: '#90caf9'}} href="https://github.com/gogobebe2">William</MUILink>
+        </DialogContentText>
+        <DialogContentText>
+          <MUILink style={{ color: '#90caf9'}} href="https://github.com/minhphu0304">Minh</MUILink>
+        </DialogContentText>
+      </DialogContent>
+    </Dialog>
+    </>
   )
 }
 
