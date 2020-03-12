@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 import { Board } from './pages/Board'
-import './App.css'
 
 const theme = createMuiTheme({
   palette: {
