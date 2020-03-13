@@ -1,9 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { AppBar } from '../../atoms/AppBar'
 
-export function Home (props) {
+export function Home () {
   return (
     <>
       <AppBar />
@@ -12,8 +11,4 @@ export function Home (props) {
       </main>
     </>
   )
-}
-
-Home.propTypes = {
-
 }
