@@ -10,7 +10,7 @@ export function Content() {
       <Note content="This is a test content This is a test content This is a test content This is a test content" />
       <div className="fab-container">
         <Fab color="secondary" aria-label="add">
-          <i class="material-icons">add</i>
+          <i className="material-icons">add</i>
         </Fab>
       </div>
     </div>

@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   },
 })
 
-function App() {
+export function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -32,5 +32,3 @@ function App() {
     </ThemeProvider>
   )
 }
-
-export default App
