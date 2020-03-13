@@ -9,11 +9,11 @@ export function Note({ content }) {
     <Rnd className="Draggable" default={{
       x: 0,
       y: 0,
-      width: 200,
+      width: 210,
       height: 200,
     }}>
       Post it note
-      <Typography style={{ minWidth: 100, minHeight: 100, height: '75%', width: '75%'}}>{content}</Typography>
+      <Typography style={{ minWidth: 100, minHeight: 100, height: '75%', width: '100%'}}>{content}</Typography>
       <Button size="small"> <i className="material-icons">edit</i></Button>
     </Rnd>
   )
