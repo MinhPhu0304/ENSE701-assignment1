@@ -1,16 +1,20 @@
-import { Card } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import React from 'react'
-import Draggable from 'react-draggable'
+import { Rnd } from 'react-rnd'
 
 import './styles.css'
 
-export function Note() {
+export function Note({ content }) {
   return (
-    <Draggable bounds="body">
-      <Card className="note" style={{backgroundColor: '#ff7eb9' }}>
-        Post it note
-      </Card>
-    </Draggable>
+    <Rnd className="Draggable" default={{
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+    }}>
+      Post it note
+      <Typography style={{ minWidth: 100, minHeight: 100, height: '75%', width: '75%'}}>{content}</Typography>
+      <Button size="small"> <i className="material-icons">edit</i></Button>
+    </Rnd>
   )
 }
-
