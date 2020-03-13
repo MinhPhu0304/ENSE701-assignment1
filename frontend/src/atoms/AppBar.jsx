@@ -1,4 +1,4 @@
-import { AppBar as MUIAppBar, IconButton, Typography, Button, 
+import { AppBar as MUIAppBar, Typography, Button, 
   makeStyles, DialogContentText,
   Link as MUILink,
   Dialog, 
@@ -32,7 +32,9 @@ export function AppBar () {
     </MUIAppBar>
 
     <Dialog open={openModal} onClose={handleModalState}>
-      <DialogTitle>Porfolio project built with ❤️</DialogTitle>
+      <DialogTitle>Porfolio project built with 
+        <span role="img" aria-label="heart">❤️</span>
+      </DialogTitle>
       <DialogContent>
         <DialogContentText>Sites built by:</DialogContentText>
         <DialogContentText>
