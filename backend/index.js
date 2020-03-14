@@ -8,7 +8,7 @@ const app = new express();
 
 const { NoteModel } = require('./model/');
 // Serve static files from the React app
-app.use(express.static('../frontend/build'));
+app.use('/static',express.static('../frontend/build/static'));
 
 app.get('/api/note', async (req, res) => {
   const result = await NoteModel.find()
