@@ -8,7 +8,7 @@ const app = new express();
 
 const { NoteModel } = require('./model/');
 // Serve static files from the React app
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/note', async (req, res) => {
   const result = await NoteModel.find()
@@ -16,7 +16,7 @@ app.get('/api/note', async (req, res) => {
 })
 
 app.get('/', (req, res) => {  
-  return res.sendFile('index.html', { root: path.join(__dirname, 'public')});
+  return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
 app.listen(process.env.PORT, () => console.log(`Server is listening on port ${process.env.PORT}`));
