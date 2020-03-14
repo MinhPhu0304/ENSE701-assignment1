@@ -15,7 +15,7 @@ app.get('/api/note', async (req, res) => {
   return res.send({ result })
 })
 
-app.get('/', (req, res) => {  
+app.get('/*', (req, res) => {  
   return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
