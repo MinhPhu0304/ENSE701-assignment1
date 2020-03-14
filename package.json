@@ -1,0 +1,22 @@
+{
+  "name": "ense701-assignment1",
+  "version": "1.0.0",
+  "description": "React + ExpressJs + MongoDB + Travis CI (Yet another uni assignment). The project used a mono repo style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-prebuild": "cd backend && npm i && cd ../frontend && npm i",
+    "heroku-postbuild": "cd frontend && npm run build && cd ../backend && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhPhu0304/ENSE701-assignment1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinhPhu0304/ENSE701-assignment1/issues"
+  },
+  "homepage": "https://github.com/MinhPhu0304/ENSE701-assignment1#readme"
+}
