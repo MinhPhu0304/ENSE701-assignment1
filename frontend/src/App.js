@@ -1,12 +1,13 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { Home } from './pages/Home'
 import { Board } from './pages/Board'
 
-import { store } from './store'
+import { store, dispatch } from './store'
+import { loadNotes } from './store/actions/loadNotes'
 
 const theme = createMuiTheme({
   palette: {
@@ -20,6 +21,7 @@ const theme = createMuiTheme({
 })
 
 export function App() {
+  useEffect(componentDidMount, [])
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -36,4 +38,8 @@ export function App() {
       </ThemeProvider>
     </Provider>
   )
+}
+
+function componentDidMount () {
+  dispatch(loadNotes())
 }
