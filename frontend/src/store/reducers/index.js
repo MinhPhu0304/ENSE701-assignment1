@@ -2,4 +2,4 @@ import { combineReducers } from 'redux'
 
 import { noteReducers } from './notes'
 
-export const RootReducers = combineReducers({ note: noteReducers })
+export const RootReducers = combineReducers({ notes: noteReducers })
