@@ -1,14 +1,16 @@
-import { ADD_NOTES, REMOVE_NOTES, UPSERT_NOTES } from '../actions/notes'
+import { ADD_NOTE, ADD_NOTES, REMOVE_NOTES, UPSERT_NOTES } from '../actions/notes'
 
 const inititalState = []
 
 export function noteReducers(state = inititalState, action) {
   switch (action.type) {
-    case ADD_NOTES:
+    case ADD_NOTE:
       return {
         ...state,
         note: [...state.notes, action.payload]
       }
+    case ADD_NOTES:
+      return action.payload
     case REMOVE_NOTES:
       return {
         ...state,
