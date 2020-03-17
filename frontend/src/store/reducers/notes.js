@@ -5,12 +5,9 @@ const inititalState = []
 export function noteReducers(state = inititalState, action) {
   switch (action.type) {
     case ADD_NOTE:
-      return {
-        ...state,
-        note: [...state.notes, action.payload]
-      }
+      return [...state, action.payload]
     case ADD_NOTES:
-      return action.payload
+      return [...state, ...action.payload]
     case REMOVE_NOTES:
       return {
         ...state,
