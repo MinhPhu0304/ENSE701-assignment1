@@ -12,6 +12,7 @@ export function Note({ content }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     // TODO: API request here
+    
     setEditting(!isEditing)
   }
   const handleTextChange = (e) => setNote(e.target.value)
@@ -31,7 +32,7 @@ export function Note({ content }) {
 
   return (
     <Rnd className="Draggable" default={defaultSetting} minWidth={defaultSetting.width} minHeight={defaultSetting.height} bounds="parent">
-      <Typography style={{ minWidth: 100, minHeight: 100, height: '75%', width: '100%'}}>{note}</Typography>
+      <Typography style={{ minWidth: 100, minHeight: 100, height: '75%', width: '100%'}}>{note.content}</Typography>
       <Button size="small" onClick={toggleEdit}> <i className="material-icons">edit</i></Button>
     </Rnd>
   )
