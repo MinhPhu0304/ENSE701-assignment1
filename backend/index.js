@@ -24,9 +24,13 @@ app.post('/api/note', async (req, res) => {
     content
   })
   await newNote.save()
-  const query = await NoteModel.find()
-  console.log(query)
   return res.send({ newNote })
+})
+
+app.put('/api/note', async (req, res) => {
+  const { content, _id } = req.body
+  const updatedNote = NoteModel.findOneAndUpdate({ _id }, { content })
+  return res.send({ updatedNote })
 })
 
 app.get('/*', (req, res) => {  
