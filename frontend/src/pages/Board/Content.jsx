@@ -17,7 +17,7 @@ function mapStateToProps (state) {
 
 function ContentDump({ notes }) {
   const handleFabClick = () => {
-    dispatch(Notes.actions.addNote(''))
+    dispatch(Notes.actions.addNote({ content: '' }))
   }
   return (
     <div style={{ backgroundColor: 'white', height: '100%', width: '100%'}}>
