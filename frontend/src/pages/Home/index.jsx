@@ -7,7 +7,7 @@ export function Home () {
     <>
       <AppBar />
       <main>
-        <h1>This is a main page</h1>
+        <h1>A simple virtual post it board</h1>
       </main>
     </>
   )
