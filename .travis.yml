@@ -10,6 +10,6 @@ install:
   - cd ../frontend && npm i
 
 script:
-  - cd backend && npm run lint
+  - cd ../backend && npm run lint
   - cd ../frontend && npm run lint
   - npm test
