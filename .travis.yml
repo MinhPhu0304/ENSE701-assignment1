@@ -5,9 +5,9 @@ notifications:
 
 install:
   - cd backend && npm i
-  - cd frontend && npm i
+  - cd ../frontend && npm i
 
 script:
   - cd backend && npm run lint
-  - cd frontend && npm run lint
-  - cd frontend && npm test
+  - cd ../frontend && npm run lint
+  - npm test
