@@ -27,7 +27,7 @@ export function AppBar () {
         </Link>
       </div>
       <div>
-        <Button size="medium" variant="outlined" color="secondary" onClick={handleModalState}>Say to the team</Button>
+        <Button size="medium" variant="outlined" color="secondary" onClick={handleModalState}>Say hi to the team</Button>
       </div>
     </MUIAppBar>
 
