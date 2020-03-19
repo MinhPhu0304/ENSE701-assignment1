@@ -1,5 +1,5 @@
 require('dotenv').config({ path: '../.env' });
-const express = require('express');
+const Express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -7,11 +7,11 @@ const path = require('path');
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 const { NoteModel } = require('./model');
 
-const app = new express();
+const app = new Express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(Express.static(path.join(__dirname, 'public')));
 
 app.get('/api/note', async (req, res) => {
   const result = await NoteModel.find();
@@ -23,7 +23,7 @@ app.post('/api/note', async (req, res) => {
   const newNote = new NoteModel({
     content,
   });
-  await newNote.save();
+  await newNote.save();
   return res.send({ newNote });
 });
 
@@ -35,4 +35,5 @@ app.put('/api/note', async (req, res) => {
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
-app.listen(process.env.PORT, () => console.log(`Server is listening on port ${process.env.PORT}`));
+
+app.listen(process.env.PORT, () => console.log(`Server is listening on port ${process.env.PORT}`)); /* eslint-disable-line */
